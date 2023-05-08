@@ -600,49 +600,52 @@
       </v-card>
     </v-navigation-drawer>
 
-    <v-main style="margin-top: 0">
+    <v-main>
+      <v-row><h1>&nbsp;</h1></v-row>
       <v-row v-if="itemSelected.id">
         <!-- <img :src="pdfsrc" alt=""> -->
         <v-col>
-          <v-card>
-            <v-card-title
-              >Historial de cambios OT :
-              {{ itemSelected.OT_numero }}</v-card-title
-            >
-            <v-subheader>{{ itemSelected.id }}</v-subheader>
-            <v-list two-line>
-              <template v-for="historial in historialList">
-                <v-list-item :key="historial.id">
-                  <v-list-item-avatar
-                    :color="arrEstado[historial.OT_estadoValue].color"
-                  >
-                  </v-list-item-avatar>
-                  <v-list-item-content>
-                    <v-list-item-title>
-                      Estado: {{ historial.OT_Estado }} -
-                      {{
-                        new Date(
-                          historial.OT_updateAd.seconds * 1000
-                        ).toLocaleDateString("en-GB", { hour12: false })
-                      }}
-                      -
-                      {{
-                        new Date(
-                          historial.OT_updateAd.seconds * 1000
-                        ).toLocaleTimeString("en-GB", { hour12: false })
-                      }}
-                    </v-list-item-title>
-                    <v-list-item-subtitle>
-                      {{ historial.OT_comentario }}
-                    </v-list-item-subtitle>
-                    <v-list-item-subtitle>
-                      Modificado por: {{ historial.OT_modificador }}
-                    </v-list-item-subtitle>
-                  </v-list-item-content>
-                </v-list-item>
-              </template>
-            </v-list>
-          </v-card>
+          <v-container>
+            <v-card>
+              <v-card-title
+                >Historial de cambios OT :
+                {{ itemSelected.OT_numero }}</v-card-title
+              >
+              <v-subheader>{{ itemSelected.id }}</v-subheader>
+              <v-list two-line>
+                <template v-for="historial in historialList">
+                  <v-list-item :key="historial.id">
+                    <v-list-item-avatar
+                      :color="arrEstado[historial.OT_estadoValue].color"
+                    >
+                    </v-list-item-avatar>
+                    <v-list-item-content>
+                      <v-list-item-title>
+                        Estado: {{ historial.OT_Estado }} -
+                        {{
+                          new Date(
+                            historial.OT_updateAd.seconds * 1000
+                          ).toLocaleDateString("en-GB", { hour12: false })
+                        }}
+                        -
+                        {{
+                          new Date(
+                            historial.OT_updateAd.seconds * 1000
+                          ).toLocaleTimeString("en-GB", { hour12: false })
+                        }}
+                      </v-list-item-title>
+                      <v-list-item-subtitle>
+                        {{ historial.OT_comentario }}
+                      </v-list-item-subtitle>
+                      <v-list-item-subtitle>
+                        Modificado por: {{ historial.OT_modificador }}
+                      </v-list-item-subtitle>
+                    </v-list-item-content>
+                  </v-list-item>
+                </template>
+              </v-list>
+            </v-card>
+          </v-container>
         </v-col>
       </v-row>
       <v-row v-else>
