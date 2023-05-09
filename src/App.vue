@@ -605,7 +605,7 @@
       <v-row v-if="itemSelected.id">
         <!-- <img :src="pdfsrc" alt=""> -->
         <v-col>
-          <v-container>
+          <v-container class="py-8 px-6">
             <v-card>
               <v-card-title
                 >Historial de cambios OT :
