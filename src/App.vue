@@ -635,10 +635,17 @@
                         }}
                       </v-list-item-title>
                       <v-list-item-subtitle>
+                        <strong>Comentario:</strong>
                         {{ historial.OT_comentario }}
                       </v-list-item-subtitle>
                       <v-list-item-subtitle>
-                        Modificado por: {{ historial.OT_modificador }}
+                        <strong>Modificado por:</strong>
+                        <v-chip class="ma-2" color="teal" text-color="white">
+                          <v-avatar left>
+                            <v-icon>mdi-account-circle</v-icon>
+                          </v-avatar>
+                          {{ historial.OT_modificador }}
+                        </v-chip>
                       </v-list-item-subtitle>
                     </v-list-item-content>
                   </v-list-item>
